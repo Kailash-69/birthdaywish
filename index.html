@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday !</title>
+    <style>
+        body {
+            background-color: #f8e1e1;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #d5006d;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .balloon {
+            position: relative;
+            display: inline-block;
+            animation: float 5s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        .prank {
+            display: none;
+            font-size: 2em;
+            color: #ff5722;
+            margin-top: 20px;
+        }
+        .message {
+            font-size: 24px;
+            color: #d5006d; /* Dark pink color */
+            opacity: 0; /* Start hidden */
+            transition: opacity 1s ease-in-out; /* Smooth transition */
+        }
+        .card {
+            background-color: white;
+            border: 2px solid #ff69b4; /* Hot pink border */
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        {
+          box-sizing: border-box;
+        }
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 5px;
+        }
+        .co{
+          float: right;
+          width: 33.33%;
+          height: ;
+          padding: 7px;
+        }
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        .img {
+         display: block;
+         margin-left: auto;
+        }
+        .img {
+         display: block;
+         margin-right: auto;
+        }
+        .frame-text-grid {
+          display: grid;
+          place-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+    <div id="card">
+        <h1>Happy Birthday VL!</h1>
+        <div class="message" id="message"></div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="balloon">🎈</div>
+    <button onclick="showPrank()">Click for a Surprise!</button>
+    <div class="prank" id="prankMessage">Just kidding! You're amazing!</div>
+    
+    <script>
+        function showPrank() {
+            const prankMessage = document.getElementById('prankMessage');
+            prankMessage.style.display = 'block';
+            setTimeout(() => {
+                prankMessage.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+    <script>
+        const messages = [
+            "You light up my life.",
+            "Your smile is my favorite.",
+            "I hope your day is as wonderful as you are.",
+            "You deserve all the love and happiness.",
+            "Happy Birthday to the one I adore!"
+        ];
+
+        let index = 0;
+
+        function displayMessage() {
+            if (index < messages.length) {
+                const messageElement = document.getElementById('message');
+                messageElement.textContent = messages[index];
+                messageElement.style.opacity = 1; // Show message
+                setTimeout(() => {
+                    messageElement.style.opacity = 0; // Hide message
+                    index++;
+                    setTimeout(displayMessage, 1000); // Wait before showing next message
+                }, 2000); // Show each message for 2 seconds
+            }
+        }
+
+        displayMessage(); // Start displaying messages
+    </script>
+    <br>
+    <br>
+    <br>
+    <div class="row" style="background-image:">
+          <div class="column">
+            <img src="C:\Users\h_san\Downloads\1535639.gif" alt="stickman" style="width:40%" style=float:right>
+          </div>
+          <div class="co">
+            <img src="C:\Users\h_san\Downloads\1535639.gif" alt="stickman" style="width:40%" style=float:left>
+          </div>
+          <div class="row">
+    	    <img src="C:\Users\h_san\Downloads\happy-birthday-birthday-cake.gif" alt="stickman" style="width:25%" style=float:center>
+   	</div>
+   </div>
+</body>
+</html>
